@@ -105,13 +105,3 @@ Utilizamos otra expresión regular (`contrasenaPattern`) para validar la contras
 Si no hay mensajes de error en ninguno de los campos, procedemos a enviar el formulario. Utilizamos la función `add()` de Firestore para agregar un nuevo documento a la colección "users" en la base de datos de Firebase. El documento contiene los valores ingresados en los campos del formulario. Si el envío es exitoso, mostramos una alerta con un mensaje de éxito y restablecemos el formulario. Si ocurre algún error, mostramos una alerta con el mensaje de error.
 
 Recordar modificar las reglas en FireBase para poder acceder a la base de datos sin inconveniente alguno.
-
-### Reglas para poder publicar en Firebase
-
-      service cloud.firestore {
-      match /databases/{database}/documents {
-      match /{document=**} {
-        allow read, write: if true;
-        }
-      }
-    }
